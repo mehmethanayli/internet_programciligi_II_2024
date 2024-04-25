@@ -20,18 +20,21 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal" method="POST" action="<?php echo base_url("Product_Category/save") ?>">
+                <form class="form-horizontal" method="POST" action="<?php echo base_url("Product_Category/update/$item->id") ?>">
                   <div class="card-body">
                     <div class="form-group row">
                       <label for="title" class="col-sm-2 col-form-label">Ürün Kategorisi Adı:</label>
                       <div class="col-sm-10">
-                        <input type="text" name="title" class="form-control" id="title" placeholder="Ürün Kategorisinin Adını Giriniz.">
+
+                        <input type="text" name="title" class="form-control" id="title" value="<?php echo isset($formError) ? set_value("title") : $item->title; ?>" placeholder="Ürün Kategorisinin Adını Giriniz.">
+
                         <?php if (isset($formError)) { ?>
                           <small><?php echo form_error("title"); ?></small>
                         <?php } ?>
                       </div>
                     </div>
                   </div>
+
                   <!-- /.card-body -->
                   <div class="card-footer">
                     <button type="submit" class="btn btn-info">Kaydet</button>

@@ -23,7 +23,7 @@
 
                     <div class="col-md-6 text-right">
                       <a href="<?php echo base_url("Product_Category/new_form") ?>" class="btn btn-success btn-xs mb-2 ">
-                      <i class="fas fa-plus"></i> Yeni Kategori Ekle</a>
+                        <i class="fas fa-plus"></i> Yeni Kategori Ekle</a>
                     </div>
 
                   </div>
@@ -48,8 +48,14 @@
                           <td><?php echo $item->id; ?></td>
                           <td><?php echo $item->title; ?></td>
                           <td><?php echo $item->is_active == 0 ? "Pasif" : "Aktif"; ?></td>
-                          <td><?php echo $item->created_at; ?></td>
-                          <td>SİL - GÜNCELLE</td>
+                          <td><?php echo dateTimeFormat($item->created_at); ?></td>
+                          <td>
+
+                            <a href="<?php echo base_url("Product_Category/delete/$item->id") ?>" class="btn btn-danger"> Sil </a>
+
+
+                            <a href="<?php echo base_url("Product_Category/update_form/$item->id"); ?>" class="btn btn-info">Güncelle</a>
+                          </td>
                         </tr>
                       <?php } ?>
 
