@@ -18,11 +18,11 @@
                   <div class="row">
 
                     <div class="col-md-6">
-                      <h3 class="card-title">Ürün Kategorileri Listesi</h3>
+                      <h3 class="card-title">Ürün Markaları Listesi</h3>
                     </div>
 
                     <div class="col-md-6 text-right">
-                      <a href="<?php echo base_url("Product_Category/new_form") ?>" class="btn btn-success btn-xs mb-2 ">
+                      <a href="<?php echo base_url("Brands/new_form") ?>" class="btn btn-success btn-xs mb-2 ">
                         <i class="fas fa-plus"></i> Yeni Ekle</a>
                     </div>
 
@@ -51,10 +51,10 @@
                           <td><?php echo dateTimeFormat($item->created_at); ?></td>
                           <td>
 
-                            <a href="<?php echo base_url("Product_Category/delete/$item->id") ?>" class="btn btn-danger"> Sil </a>
+                            <a href="<?php echo base_url("Brands/delete/$item->id") ?>" class="btn btn-danger"> Sil </a>
 
 
-                            <a href="<?php echo base_url("Product_Category/update_form/$item->id"); ?>" class="btn btn-info">Güncelle</a>
+                            <a href="<?php echo base_url("Brands/update_form/$item->id"); ?>" class="btn btn-info">Güncelle</a>
                           </td>
                         </tr>
                       <?php } ?>
